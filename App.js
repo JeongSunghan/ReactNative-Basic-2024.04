@@ -7,6 +7,8 @@ import PizzaTranslator from './assets/components/PizzaTranslator';
 import FlatListBasic from './assets/components/FlatListBasic';
 import SectionListBasic from './assets/components/SectionListBasic';
 import FetchExample from './assets/components/FetchExample';
+import CountExam from './assets/components/CountExam';
+import Counter from './assets/components/Counter';
 
 const logo = {
   uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -17,6 +19,10 @@ const logo = {
 export default function App() {   //메인 컴포넌트
   return (    
     <ScrollView>      
+      <Image source={logo} />
+      <Counter />
+      <Image source={logo} />
+      <CountExam />
       <Image source={logo} />
       <FetchExample />
       <Image source={logo} />
@@ -29,9 +35,7 @@ export default function App() {   //메인 컴포넌트
       <State name='Hwang' />
       <Image source={logo} />      
       <Cat name='Maru' num='1' />
-      <Cat name='Run Tom Tugger' num='2' />
-      <Image source={logo} />
-      <HelloWorld />
+      <Cat name='Run Tom Tugger' num='2' />     
     </ScrollView>
   );
 }

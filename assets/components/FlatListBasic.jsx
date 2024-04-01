@@ -14,8 +14,7 @@ export default function FlatListBasic() {
                     // key안에 식별 할 수 있는 키값을 넣기                    
                     { key: 'Apple' }, 
                     { key: 'Banana' },
-                    { key: 'Cherry' },
-                    { key: 'Cherry' },
+                    { key: 'Cherry' },                
                     { key: 'Orange' },
                     { key: 'Mango' },
                 ]}
