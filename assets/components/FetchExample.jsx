@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, Text, View } from "react-native";
 
 
 export default function FetchExample() {    
@@ -23,20 +23,28 @@ export default function FetchExample() {
     }, []);
 
     return (
-        <View>
-            <Text style={{ fontSize: 30, padding: 15, fontWeight: "bold" }}>내가 좋아하는 과일</Text>
-            <FlatList
-                data={[
-                    { key: 'Apple' },
-                    { key: 'Banana' },
-                    { key: 'Cherry' },
-                    { key: 'Cherry' },
-                    { key: 'Orange' },
-                    { key: 'Mango' },
-                ]}
-                renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
+        <View style={{flex: 1, padding: 10}}>
+            {isLoading ? (
+                //로딩이 true일 경우, ActivityIndicator 컴포넌트 렌더링하여 로딩 중임을 시각적으로 알리고
+                <ActivityIndicator />                
+            ) : (
+                // false로 변경되면(로딩이 끝나면), FlatList컴포넌트를 사용하여 데이터를 리스트로 표현
+                <FlatList 
+                    data={data}         //플랫리스트에 표시할 데이터 지정
+                    keyExtractor={({id}) => id}     //id속성을 키값으로 사용 및 추출
 
-            />
+                    //  데이터의 각 아이템을 어떻게 렌더링할지 정의
+                    // 영화 아이템의 title과 releaseYear를 text 컴포넌트 안에 표시
+                    renderItem={({item}) => (       
+                        <Text>{item.title}, {item.releaseYear}</Text>
+                    )}
+                />
+            )}
         </View>
+        /*  정리!!
+                데이터가 로딩 중일 때는 로딩 인디케이터를 보여주고, 로딩이 완료되면 
+                API로부터 받은 데이터를 리스트로 표시
+        */
+        
     );
 };

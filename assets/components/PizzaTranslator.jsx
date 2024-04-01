@@ -18,7 +18,7 @@ export default function PizzaTranslator() {
                 />
             </View>
             <Text style={{padding: 10, fontSize: 40}}>
-                {/* 단어를 띄운게 존재하면 피자로 변환하고,
+                {/* 단어를 띄워쓰면 피자로 변환,
                     결과를 다시 띄어쓰기로 결합하여 (join)표시 */}
                 {text.split(' ').map(word => word && '🍕').join(' ')}                               
             </Text>

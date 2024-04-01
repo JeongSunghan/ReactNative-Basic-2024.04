@@ -6,6 +6,7 @@ import State from './assets/components/State';
 import PizzaTranslator from './assets/components/PizzaTranslator';
 import FlatListBasic from './assets/components/FlatListBasic';
 import SectionListBasic from './assets/components/SectionListBasic';
+import FetchExample from './assets/components/FetchExample';
 
 const logo = {
   uri: 'https://reactnative.dev/img/tiny_logo.png',
@@ -16,6 +17,8 @@ const logo = {
 export default function App() {   //메인 컴포넌트
   return (    
     <ScrollView>      
+      <Image source={logo} />
+      <FetchExample />
       <Image source={logo} />
       <SectionListBasic />
       <Image source={logo} />      
