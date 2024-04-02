@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, Button } from "react-native";
 
-export default function Count() {
+export default function CountExam() {
     const [count, setCount] = useState(0);
     const [isDisabled, setIsDisabled] = useState(false);
 

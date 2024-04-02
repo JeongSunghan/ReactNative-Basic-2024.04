@@ -10,7 +10,8 @@ export default function FlatListBasic() {
         <View style={styles.container}>
             <Text style={{fontSize: 30, padding: 15, fontWeight:"bold"}}>내가 좋아하는 과일</Text>
             <FlatList                
-                data={[  //  리스트로 표시하고자 하는 데이터의 배열을 전달
+                data={[  
+                    //  리스트로 표시하고자 하는 데이터의 배열을 전달
                     // key안에 식별 할 수 있는 키값을 넣기                    
                     { key: 'Apple' }, 
                     { key: 'Banana' },
